@@ -10,8 +10,11 @@ import models.*;
 public class Application extends Controller {
 
     public static void index() {
-        render();
-       // Treballador treballador1= new Treballador("Joan",23, "Direcotr", "joangarcia", "joan23");
+        Treballador frontPost = Treballador.find("order by nivellcontrol desc").first();
+        List<Treballador> olderPosts = Treballador.find(
+                "order by nivellcontrol desc"
+        ).from(1).fetch(10);
+        render(frontPost, olderPosts);
     }
     public static void IniBD()
     {
@@ -25,7 +28,8 @@ public class Application extends Controller {
 
     public static void login (String n, String p)
     {
-        renderText("benvinguts al servidor"+n);
+        renderText("LOGIN"+n);
+
     }
     public static void addDepartament()
     {

@@ -13,7 +13,7 @@ public class Treballador extends Model {
     public int nivellcontrol;
     public String nom;
     public String usuari;
-    public String contraseña;
+    public String contrasenya;
 
     @ManyToOne
     public Departament departament;
@@ -24,7 +24,7 @@ public class Treballador extends Model {
         this.nivellcontrol=e;
         this.departament=dep;
         this.usuari=u;
-        this.contraseña=c;
+        this.contrasenya=c;
     }
 }
 
