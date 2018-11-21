@@ -1,0 +1,36 @@
+#{extends 'main.html' /}
+<!DOCTYPE html >
+<html>
+
+
+<div class="login">
+    <h2>LOGIN ADMINISTRADOR DEL DEPARTAMENT</h2>
+    <div class="credentials">
+
+
+    #{form @controllers.Departaments.login()}
+        <p>
+            <label for="departament"> Departament: </label>
+            <input type="text" name="nom" id="nomdep" />
+        </p>
+        <p>
+            <label for="contrasenya">Contrasenya: </label>
+            <input type="text" name="contrasenya" id="pass" />
+        </p>
+        <p>
+            <input type="submit" value="Enviar" />
+        </p>
+    #{/form}
+
+
+    </div>
+    <script>
+        function enviarLogin(){
+            var username=document.getElementById('usr').innerHTML;
+            var password=document.getElementById('pass').innerHTML;
+
+
+        }
+    </script>
+</div>
+</html>

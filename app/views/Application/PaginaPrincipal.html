@@ -1,0 +1,59 @@
+
+#{extends 'main.html' /}
+
+<!DOCTYPE html >
+
+<html>
+
+<div id="Not">
+
+    <div id="New">
+
+        <h1> <a href="@{Application.newNotification(departament,usuari)}">New notification</a> </h1>
+
+    </div>
+    <div id="Show">
+
+        <h1> <a href="@{Application.showNotifications(departament,usuari)}">Show notifications</a>
+
+        </h1>
+
+    </div>
+
+
+
+</div>
+
+<div class="Home">
+    <h2>Home</h2>
+    <div class="credentials">
+
+    #{form @controllers.Treballadors.addTreballador(nomdep)}
+        <p>
+            <label for="nom"> Nom: ${nom ?: 'Nom'}</label>
+
+        </p>
+        <p>
+            <label for="Departament"> Departament: ${departament ?: 'Departament'} </label>
+
+        </p>
+        <p>
+            <label for="Nivell de control"> Nivell de control: ${n ?: 'NivellControl'} </label>
+        </p>
+
+    #{/form}
+
+
+
+    </div>
+    <script>
+        function showNotifications(){
+        #{form @controllers.Application.showNotifications(nomdep)}
+
+        #{/form}
+
+
+        }
+    </script>
+</div>
+</html>

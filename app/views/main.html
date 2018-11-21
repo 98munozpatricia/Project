@@ -4,7 +4,7 @@
     <title>#{get 'title' /}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" media="screen"
-          href="@{'/public/stylesheets/main.css'}" />
+          href="@{'/public/stylesheets/job.css'}" />
     <link rel="shortcut icon" type="image/png"
           href="@{'/public/images/favicon.png'}" />
 </head>
@@ -26,24 +26,29 @@
             }
         </script>
     </div>
+    <nav>
+
+    </nav>
     <ul id="tools">
 
         <li>
 
-            <a id="login" href="Login.html">Login</a>
+            <a id="login" href="Login">Login</a>
             <div onClick="document.getElementById('login').innerHTML =
                       loadPage('Login.html');"></div>
 
             <div id="login" ></div>
 
+            <a id="register" href="Register">Register</a>
+            <div onClick="document.getElementById('register').innerHTML =
+                      loadPage('Register.html');"></div>
+
+            <div id="register" ></div>
+
         </li>
     </ul>
 
-    <div id="title">
-        <span class="about">About this blog</span>
-        <h1><a href="#">${blogTitle}</a></h1>
-        <h2>${blogBaseline}</h2>
-    </div>
+
 </div>
 
 <div id="main">
@@ -52,7 +57,7 @@
 
 
 </div>
-<div w3-include-html="Login.html"></div>
+<div w3-include-html="Login"></div>
 <p id="footer">
    Aplicació web de gestió d'empreses. PES EETAC
 </p>

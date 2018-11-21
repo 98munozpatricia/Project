@@ -9,16 +9,18 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Notificacions extends Model {
     public String titol;
-    public String departament;
 
     @Lob
     public String contingut;
 
     @ManyToOne
-    public Treballador treballador;
+    public Departament departament;
 
-    public Notificacions()
+    public Notificacions(Departament dep, String contingut, String titol)
     {
+        this.contingut=contingut;
+        this.titol=titol;
+        this.departament=dep;
 
     }
 

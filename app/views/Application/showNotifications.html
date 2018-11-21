@@ -1,0 +1,15 @@
+
+#{extends 'main.html' /}
+
+
+<!DOCTYPE html >
+
+<html>
+<ul>
+#{list items:lnot, as:'lnot'}
+    <h3>${lnot.titol}</h3>
+    <h4>${lnot.contingut}</h4>
+
+#{/list}
+</ul>
+</html>

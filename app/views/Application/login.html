@@ -1,0 +1,37 @@
+#{extends 'main.html' /}
+<!DOCTYPE html >
+<html>
+
+
+<div class="login">
+    <h2>LOGIN</h2>
+    <div class="credentials">
+
+
+        #{form @controllers.Treballadors.login()}
+            <p>
+                <label for="usuari"> Usuari: </label>
+                <input type="text" name="usuari" id="usr" />
+            </p>
+            <p>
+                <label for="contrasenya">Contrasenya: </label>
+                <input type="text" name="contrasenya" id="pass" />
+            </p>
+            <p>
+                <input type="submit" value="Enviar" />
+            </p>
+        #{/form}
+
+
+
+    </div>
+    <script>
+        function enviarLogin(){
+            var username=document.getElementById('usr').innerHTML;
+            var password=document.getElementById('pass').innerHTML;
+
+
+        }
+    </script>
+</div>
+</html>

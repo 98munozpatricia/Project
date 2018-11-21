@@ -1,0 +1,38 @@
+
+#{extends 'main.html' /}
+
+<!DOCTYPE html >
+
+<html>
+
+
+<div class="login">
+    <h2>New notification</h2>
+    <div class="credentials">
+
+    #{form @controllers.Notificacions.NewNotification(usuari)}
+
+        <p>
+            <label for="Nomdepartament"> Departament destinatari: </label>
+            <input type="text" name="nomdepartament" id="nomdepartament" />
+        </p>
+        <p>
+            <label for="Titol"> Titol: </label>
+            <input type="text" name="titol" id="titol" />
+        </p>
+        <p>
+            <label for="contingut"> Contingut: </label>
+            <input type="text" cols="40" rows="5" style="width:600px; height:100px;"  name="contingut" id="contingut" />
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar" />
+        </p>
+
+    #{/form}
+
+
+
+    </div>
+</div>
+</html>

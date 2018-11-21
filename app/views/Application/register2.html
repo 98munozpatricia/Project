@@ -1,0 +1,51 @@
+
+#{extends 'main.html' /}
+
+<!DOCTYPE html >
+
+<html>
+
+
+<div class="login">
+    <h2>REGISTRAR NOU TREBALLADOR</h2>
+    <div class="credentials">
+
+        #{form @controllers.Treballadors.addTreballador(nomdep)}
+            <p>
+                <label for="nom"> Departament: ${nomdep ?: 'departament'}</label>
+
+            </p>
+            <p>
+                <label for="nom"> Nom: </label>
+                <input type="text" name="nom" id="nom" />
+            </p>
+            <p>
+                <label for="ncontrol"> Nivell de control: </label>
+                <input type="number" name="ncontrol" id="ncontrol" />
+            </p>
+            <p>
+                <label for="usuari"> Usuari: </label>
+                <input type="text" name="usuari" id="usr" />
+            </p>
+            <p>
+                <label for="contrasenya">Contrasenya: </label>
+                <input type="text" name="contrasenya" id="pass" />
+            </p>
+            <p>
+                <input type="submit" value="Enviar" />
+            </p>
+        #{/form}
+
+
+
+    </div>
+    <script>
+        function enviarLogin(){
+            var username=document.getElementById('usr').innerHTML;
+            var password=document.getElementById('pass').innerHTML;
+
+
+        }
+    </script>
+</div>
+</html>

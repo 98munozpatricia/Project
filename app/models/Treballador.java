@@ -1,15 +1,16 @@
 package models;
 
+import play.db.jpa.Model;
 
-import java.util.*;
-import javax.persistence.*;
-
-import play.db.jpa.*;
-
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Treballador extends Model {
-
     public int nivellcontrol;
     public String nom;
     public String usuari;
@@ -26,6 +27,6 @@ public class Treballador extends Model {
         this.usuari=u;
         this.contrasenya=c;
     }
+
+
 }
-
-

@@ -1,5 +1,7 @@
 package controllers;
 
+import models.Notificacions;
+import net.sf.ehcache.search.expression.Not;
 import play.*;
 import play.mvc.*;
 
@@ -7,45 +9,55 @@ import java.util.*;
 
 import models.*;
 
+import javax.swing.text.html.HTML;
+
 public class Application extends Controller {
 
     public static void index() {
-        Treballador frontPost = Treballador.find("order by nivellcontrol desc").first();
-        List<Treballador> olderPosts = Treballador.find(
-                "order by nivellcontrol desc"
-        ).from(1).fetch(10);
-        render(frontPost, olderPosts);
-    }
-    public static void IniBD()
-    {
-        Departament administracio = new Departament("Administració", 5).save();
-        Treballador treballador1= new Treballador("Joan", 2, administracio, "joangarcia", "joan23").save();
-        administracio.ltreballadors.add(treballador1);
-        administracio.save();
-        Departament depart = Departament.find("bynomdepartaments","Administració").first();
+        render();
 
     }
 
-    public static void login (String n, String p)
+    public static void login ()
     {
-        renderText("LOGIN"+n);
+        render();
 
     }
-    public static void addDepartament()
+    public static void register ()
     {
-        Departament administracio = new Departament("Administració", 5).save();
-        Treballador t1= new Treballador("Jordi", 2, administracio, "jordigarcia", "jordi43").save();
-        Treballador treballador1= new Treballador("Joan", 2, administracio, "joangarcia", "joan23").save();
-        administracio.ltreballadors.add(treballador1);
-        administracio.save();
-        renderText("Treballador:"+administracio.ltreballadors.get(0).nivellcontrol);
+        render();
 
     }
-    public static void removeDepartament()
+    public static void register2 (String nomdep)
     {
-        Departament d= Departament.find("bynomdepartament", "Administració").first();
-        d.delete();
+        render(nomdep);
+
     }
+    public static void PaginaPrincipal (String usuari)
+    {
+        Treballador treballador= Treballador.find("byUsuari", usuari).first();
+        String nom=treballador.nom;
+        int n=treballador.nivellcontrol;
+        String departament=treballador.departament.nomdepartament;
+        render(usuari,nom,n,departament);
+
+    }
+    public static void newNotification (String departament, String usuari)
+    {
+
+        render(departament, usuari);
+
+    }
+    public static void showNotifications(String departament, String usuari) {
+
+        Departament dep= Departament.find("byNomdepartament", departament).first();
+        List<Notificacions> lnot = dep.lnotificacions;
+        render(lnot, departament, usuari);
+    }
+
+
+
+
 
 
 }
