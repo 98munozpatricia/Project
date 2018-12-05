@@ -10,8 +10,21 @@ public class Treballadors extends Controller {
         Treballador t= Treballador.find("byUsuariAndContrasenya", usuari, contrasenya).first();
         if (t!=null)
         {
-
            Application.PaginaPrincipal(t.usuari);
+        }
+        else
+        {
+            renderText("Usuari o password incorrecte"+usuari+contrasenya);
+        }
+    }
+    public static void loginAndroid(String usuari, String contrasenya)
+    {
+        Treballador t= Treballador.find("byUsuariAndContrasenya", usuari, contrasenya).first();
+        if (t!=null)
+        {
+            renderText("OK: Benvingut al servidor");
+            Application.PaginaPrincipal(t.usuari);
+
         }
         else
         {
