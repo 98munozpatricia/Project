@@ -18,9 +18,9 @@ public class Application extends Controller {
 
     }
 
-    public static void login ()
+    public static void login (String errortext)
     {
-        render();
+        render(errortext);
 
     }
     public static void register ()
@@ -50,8 +50,30 @@ public class Application extends Controller {
     }
     public static void showNotifications(String departament, String usuari) {
 
-        Departament dep= Departament.find("byNomdepartament", departament).first();
-        List<Notificacions> lnot = dep.lnotificacions;
+        List<Notificacions> lnot = null;
+        if (Objects.equals(departament,"Direccio"))
+        {
+            lnot=Notificacions.findAll();
+
+        }
+        else {
+            Departament dep = Departament.find("byNomdepartament", departament).first();
+            lnot = dep.lnotificacions;
+        }
+        render(lnot, departament, usuari);
+    }
+    public static void showMessages(String usuari) {
+
+        List<Notificacions> lnot = null;
+        if (Objects.equals(departament,"Direccio"))
+        {
+            lnot=Notificacions.findAll();
+
+        }
+        else {
+            Departament dep = Departament.find("byNomdepartament", departament).first();
+            lnot = dep.lnotificacions;
+        }
         render(lnot, departament, usuari);
     }
 

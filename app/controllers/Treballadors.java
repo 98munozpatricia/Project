@@ -4,9 +4,19 @@ import models.Departament;
 import models.Treballador;
 import play.mvc.Controller;
 
+import javax.swing.text.html.HTML;
+
 public class Treballadors extends Controller {
+
     public static void login(String usuari, String contrasenya)
     {
+        validation.required(usuari);
+        validation.required(contrasenya);
+        if(validation.hasErrors()) {
+            params.flash(); // add http parameters to the flash scope
+            validation.keep(); // keep the errors for the next request
+            Application.login("Es necessari omplir els camps especificats");
+        }
         Treballador t= Treballador.find("byUsuariAndContrasenya", usuari, contrasenya).first();
         if (t!=null)
         {
@@ -14,7 +24,7 @@ public class Treballadors extends Controller {
         }
         else
         {
-            renderText("Usuari o password incorrecte"+usuari+contrasenya);
+            Application.login("Usuari o contrasenya incorrecte");
         }
     }
     public static void loginAndroid(String usuari, String contrasenya)
@@ -40,7 +50,7 @@ public class Treballadors extends Controller {
         {
 
             d.addTreballador(nom,ncontrol,usuari,contrasenya);
-            Application.login();
+            Application.login("");
         }
         else
         {

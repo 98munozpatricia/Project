@@ -30,10 +30,13 @@ body {
 }
 
 #logo span {
-    color: #f00;
-    font-size: 70%;
+    color: #c4e3f2;
+    font-size: 50%;
 }
-
+span {
+    color: #c4e3f2;
+    font-size: 50%;
+}
 #tools {
     list-style: none;
     margin: 0;

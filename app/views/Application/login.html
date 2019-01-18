@@ -11,14 +11,17 @@
         #{form @controllers.Treballadors.login()}
             <p>
                 <label for="usuari"> Usuari: </label>
-                <input type="text" name="usuari" id="usr" />
+                <input type="text" name="usuari" id="usr" required />
+                <span>Paràmetre obligatori</span>
             </p>
             <p>
                 <label for="contrasenya">Contrasenya: </label>
-                <input type="text" name="contrasenya" id="pass" />
+                <input type="text" name="contrasenya" id="pass" required/>
+                <span >Paràmetre obligatori</span>
             </p>
             <p>
                 <input type="submit" value="Enviar" />
+                <span class="error" id="errorlogin">${errortext ?: ''}</span>
             </p>
         #{/form}
 

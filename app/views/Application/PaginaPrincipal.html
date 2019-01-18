@@ -9,12 +9,19 @@
 
     <div id="New">
 
-        <h1> <a href="@{Application.newNotification(departament,usuari)}">New notification</a> </h1>
+        <h1> <a href="@{Application.newNotification(departament,usuari)}">Nova notificació</a> </h1>
 
     </div>
     <div id="Show">
 
-        <h1> <a href="@{Application.showNotifications(departament,usuari)}">Show notifications</a>
+        <h1> <a href="@{Application.showNotifications(departament,usuari)}">Mostrar notifications</a>
+
+        </h1>
+
+    </div>
+    <div id="Mess">
+
+        <h1> <a href="@{Application.showNotifications(departament,usuari)}">Missatges</a>
 
         </h1>
 
@@ -25,7 +32,7 @@
 </div>
 
 <div class="Home">
-    <h2>Home</h2>
+    <h2>Menú principal</h2>
     <div class="credentials">
 
     #{form @controllers.Treballadors.addTreballador(nomdep)}

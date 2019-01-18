@@ -7,11 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
+import play.data.validation.*;
 
 @Entity
 public class Departament extends Model {
+    @Required
     public String nomdepartament;
     public int numtreballadors;
+    @Required
     public String contrasenya;
 
     @OneToMany

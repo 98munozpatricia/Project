@@ -1,6 +1,6 @@
-14 nov 2018 22:19:13,965 INFO  ~ Starting C:\Users\patri\play\WebApp\.
-14 nov 2018 22:19:14,168 WARN  ~ You're running Play! in DEV mode
-14 nov 2018 22:19:15,471 INFO  ~ HikariPool-1 - Starting...
-14 nov 2018 22:19:15,537 INFO  ~ HikariPool-1 - Start completed.
-14 nov 2018 22:19:15,548 INFO  ~ Connected to jdbc:h2:mem:play for default
-14 nov 2018 22:19:16,614 INFO  ~ Application 'Project' is now started !
+15 ene 2019 17:37:45,166 INFO  ~ Starting C:\Users\patri\play\WebApp\.
+15 ene 2019 17:37:45,398 WARN  ~ You're running Play! in DEV mode
+15 ene 2019 17:37:47,134 INFO  ~ HikariPool-1 - Starting...
+15 ene 2019 17:37:47,160 INFO  ~ HikariPool-1 - Start completed.
+15 ene 2019 17:37:47,169 INFO  ~ Connected to jdbc:h2:mem:play for default
+15 ene 2019 17:37:48,245 INFO  ~ Application 'Project' is now started !
